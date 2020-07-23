@@ -13,7 +13,7 @@ make test
 ## Tests used
 
 I used the tester provided by [HappyTramp (cacharle)](https://github.com/cacharle/libasm_test.git), which are prolific and efficient (highly recommend)
-![example\_screenshot](oghobhainn.github.com/libasm/img/screenshot.jpg)
+![Result of the tests](https://github.com/oghobhainn/libasm/blob/master/img/screenshot.jpg)
 
 ## Useful sites used
 
