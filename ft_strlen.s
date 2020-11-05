@@ -1,11 +1,10 @@
-	global	_ft_strlen
+	global	_ft_strlen ; char *strdup(const char *s1)
 
 _ft_strlen:
-	mov	rax, -1
+	mov	rax,	-1
 
-ft_strlen_loop:
+loop:
 	inc	rax
-	mov	dl, [rdi + rax]
-	cmp	dl, 0
-	jne	ft_strlen_loop
+	cmp byte [rdi + rax], 0
+	jne loop
 	ret

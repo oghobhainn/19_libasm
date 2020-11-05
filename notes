@@ -1,0 +1,44 @@
+REPERTORIES :
+	rax - eax - ax - ah -al:Values are returned from functions in this register.  
+	rcx : scratch register, often the counter
+	
+	rbx |\
+	rsp |-> preserved registers
+	rbp |/
+
+Arg	1 :	RDI - edi - di - dil
+	2 :	RSI - esi - si - sil
+	3 :	RDX - edx - dx - dl
+	4 :	RCX - ecx - cx - cl
+	5 :	R8
+	6 :	R9
+
+“byte”			refers to a one-byte integer
+“word”			refers to a two-byte integer
+“doubleword”	refers to a four-byte integer
+“quadword”		refers to an eight-byte value
+Any time the assembler can figure the size out automatically, they are optional
+
+
+square brackets mean to then take that result and treat it like an address to a location in memory
+
+To init a value : "xor rax, rax" = init rax at 0
+				or "mov rax, 0"
+
+PUSH a value (or a register) will write it on the stack.
+	The value can still be accessed after being pushed, but can now be overwritten because its in a safe place
+every PUSH has to be followed somewhere by a POP. NOT NECESSARILY IN THE SAME REGISTER
+example :	push	RDI
+			pop		RSI -> puts what we've pushed into RSI
+
+jz		jump if zero
+je		jump if equal
+jb				below
+ja		jump if above
+jnz				non-zero
+
+SYSCALL will ask the OS to perform a service (exit, fork, write, read, open, close,...)
+	it handles ERRORs 
+
+
+;

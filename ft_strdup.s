@@ -1,23 +1,24 @@
-	global _ft_strdup
-	extern _malloc
-	extern _ft_strlen
-	extern _ft_strcpy
+	global _ft_strdup ; char *strdup(const char *s1)
+	
+	extern _malloc		; void *malloc(size_t size)
+	extern _ft_strlen	; size_t strlen(const char *s)
+	extern _ft_strcpy	; char *stpcpy(char *dst, const char *src)
 
 _ft_strdup:
-	mov	rax, 0
-	mov	rsi, 0
-	push	rdi		; keep it preserved
+	mov		rax, 0
+	mov		rsi, 0
+	push	rdi
 	call	_ft_strlen
-	mov	rdi, rax
-	inc	rdi
+	mov		rdi, rax
+	inc		rdi
 	call	_malloc
-	cmp	rax, 0
-	je	error
-	pop	rsi
-	mov	rdi, rax
+	cmp		rax, 0
+	pop		rsi
+	je		error
+	mov		rdi, rax 
 	call	_ft_strcpy
 	ret
 
 error:
-	mov	rax, -1
+	mov		rax, -1
 	ret
